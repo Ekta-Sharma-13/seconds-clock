@@ -37,3 +37,17 @@ cd seconds-clock
 Then just open `index.html` in your browser, or use a live server extension in VS Code for auto-reload.
 
 ## 📁 Project Structure
+seconds-clock/
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+
+## 🧠 What I Learned
+
+Building this helped me practice working with `Date()` objects, DOM manipulation, and timed updates using `setInterval()` in vanilla JavaScript.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
