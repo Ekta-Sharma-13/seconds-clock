@@ -1,147 +1,227 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Monserrat', 'Source Code Pro', 'Source Code pro';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monserrat", "Source Code Pro", "Source Code pro";
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    width: 100%;
-    position: relative;
-    top: 0px;
-    background: rgb(87, 87, 87);
-    padding: 20px 45px;
-    z-index: 11;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  background: rgb(87, 87, 87);
+  padding: 20px 45px;
+  z-index: 11;
 }
 
 #logo {
-    font-size: 3rem;
-    font-weight: 900;
-    color: rgb(196, 241, 255);
-    padding: 10px 8px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgb(196, 241, 255);
+  padding: 10px 8px;
 }
 
 nav ul li {
-    list-style: none;
-    color: rgb(204, 201, 201);
-    text-decoration: none;
-    font-size: 2.3rem;
-    font-weight: 700;
+  list-style: none;
+  color: rgb(204, 201, 201);
+  text-decoration: none;
+  font-size: 2.3rem;
+  font-weight: 700;
 }
 
 nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    width: 40%;
-    padding: 14px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 40%;
+  padding: 14px;
 }
 
 .container {
-    background-color: rgb(31, 31, 31);
-    z-index: 0;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background-color: rgb(31, 31, 31);
+  z-index: 0;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .clock,
 .calender {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-    width: 55vw;
-    font-size: 7rem;
-    font-weight: 600;
-    text-align: center;
-    background: rgb(77, 77, 77);
-    border-radius: 20px;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 55vw;
+  font-size: 7rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgb(77, 77, 77);
+  border-radius: 20px;
+  position: relative;
 }
 
 .calender {
-    background: transparent;
-    padding: 12px 8px;
-    height: max-content;
-    width: max-content;
-
+  background: transparent;
+  padding: 12px 8px;
+  height: max-content;
+  width: max-content;
 }
 
 .date {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 2rem;
-    text-decoration: underline;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 .clkSuf {
-    color: black;
-    font-size: 3rem;
-    margin: 12px;
-    position: relative;
-    bottom: 0px;
+  color: black;
+  font-size: 3rem;
+  margin: 12px;
+  position: relative;
+  bottom: 0px;
 }
 
 .timeFormatChanger {
-    position: fixed;
-    bottom: 50px;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.56);
+  position: fixed;
+  bottom: 50px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.56);
 }
 
 /* The container */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
 }
 
 /* Hide the default checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The track (background) */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    background-color: #ccc;
-    transition: 0.3s;
-    border-radius: 26px;
-    /* Rounded pill shape */
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 26px;
+  /* Rounded pill shape */
 }
 
 /* The sliding circle (knob) */
 .slider::before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.3s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
 }
 
 /* When checked: change track color */
-.switch input:checked+.slider {
-    background-color: #4caf50;
-    /* Green */
+.switch input:checked + .slider {
+  background-color: #4caf50;
+  /* Green */
 }
 
 /* When checked: move the circle to the right */
-.switch input:checked+.slider::before {
-    transform: translateX(24px);
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* ===== Responsive breakpoints ===== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    nav {
+        padding: 15px 20px;
+        height: auto;
+        min-height: 12vh;
+    }
+
+    #logo {
+        font-size: 2rem;
+        padding: 8px 4px;
+    }
+
+    nav ul {
+        width: auto;
+        padding: 8px;
+    }
+
+    nav ul li {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        height: auto;
+        min-height: 88vh;
+        padding: 30px 15px;
+        gap: 20px;
+    }
+
+    .clock,
+    .calender {
+        width: 85vw;
+        height: auto;
+        min-height: 20vh;
+        font-size: 3.5rem;
+        padding: 20px;
+    }
+
+    .date {
+        font-size: 1.4rem;
+    }
+
+    .clkSuf {
+        font-size: 1.8rem;
+        margin: 6px;
+    }
+
+    .timeFormatChanger {
+        position: static;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    #logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        font-size: 1.1rem;
+    }
+
+    .clock,
+    .calender {
+        width: 92vw;
+        font-size: 2.2rem;
+    }
+
+    .date {
+        font-size: 1.1rem;
+    }
+
+    .clkSuf {
+        font-size: 1.2rem;
+    }
 }
