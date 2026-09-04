@@ -10,6 +10,12 @@ A clean, real-time digital clock built with vanilla HTML, CSS, and JavaScript. N
 
 [View Live Website](https://ekta-sharma-13.github.io/seconds-clock/)
 
+## Screenshot
+
+![Seconds Clock](project-screenshots/screenshot1.png)
+![Seconds Clock](project-screenshots/screenshot2.png)
+
+
 ## ✨ Features
 
 - Real-time updates every second using `setInterval`
@@ -51,8 +57,3 @@ Building this helped me practice working with `Date()` objects, DOM manipulation
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## Screenshot
-
-![Seconds Clock](project-screenshots/screenshot1.png)
-![Seconds Clock](project-screenshots/screenshot2.png)
