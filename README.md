@@ -8,7 +8,7 @@ A clean, real-time digital clock built with vanilla HTML, CSS, and JavaScript. N
 
 ## 🚀 Demo
 
-[Live Demo](#) <!-- add your GitHub Pages / Netlify link here -->
+[View Live Website](https://ekta-sharma-13.github.io/seconds-clock/)
 
 ## ✨ Features
 
