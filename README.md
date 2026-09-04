@@ -51,3 +51,8 @@ Building this helped me practice working with `Date()` objects, DOM manipulation
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## Screenshot
+
+![Seconds Clock](project-screenshots/screenshot1.png)
+![Seconds Clock](project-screenshots/screenshot2.png)
