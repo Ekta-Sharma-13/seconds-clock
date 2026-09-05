@@ -1,29 +1,25 @@
-let clock = document.body.querySelector(".clock");
-let calender = document.body.querySelector(".calender");
-let weekDayName = document.body.querySelector(".day");
-let nav = document.body.querySelector(".nav");
-let timeFormat = document.body.querySelector("#toggleBtnTime");
+let clock = document.querySelector(".clock");
+let calendar = document.querySelector(".calender");
+let weekDayName = document.querySelector(".day");
+let nav = document.querySelector(".nav");
+let timeFormat = document.querySelector("#toggleBtnTime");
 
 let clockSuffix = document.createElement("span");
-clockSuffix.setAttribute("class", "clkSuf");
+clockSuffix.className = "clkSuf";
 
 let todayDate = document.createElement("span");
-todayDate.setAttribute("class", "date");
+todayDate.className = "date";
 
-setInterval((hr, min, sec, day, month, year, weekDay) => {
-  function formatZero() {
-    if (hr < 10) {
-      hr = `0${hr}`;
-    }
-    if (min < 10) {
-      min = `0${min}`;
-    }
-    if (sec < 10) {
-      sec = `0${sec}`;
-    }
-  }
-
+function updateClock() {
   const date = new Date();
+
+  let hr = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+
+  const day = date.getDate();
+  const year = date.getFullYear();
+
   const monthSystem = [
     "January",
     "February",
@@ -38,6 +34,7 @@ setInterval((hr, min, sec, day, month, year, weekDay) => {
     "November",
     "December",
   ];
+
   const daySystem = [
     "Sunday",
     "Monday",
@@ -48,46 +45,49 @@ setInterval((hr, min, sec, day, month, year, weekDay) => {
     "Saturday",
   ];
 
-  hr = date.getHours();
-  min = date.getMinutes();
-  sec = date.getSeconds();
+  const month = monthSystem[date.getMonth()];
+  const weekDay = daySystem[date.getDay()];
 
-  day = date.getDate();
-  month = monthSystem[date.getMonth()];
-  year = date.getFullYear();
+  // Add leading zero
+  min = String(min).padStart(2, "0");
+  sec = String(sec).padStart(2, "0");
 
-  weekDay = daySystem[date.getDay()];
-  weekDayName.innerHTML = `Day${date.getDay() + 1} - ${weekDay}`;
-  nav.appendChild(weekDayName);
+  // 24-hour format
+  if (timeFormat.checked) {
+    hr = String(hr).padStart(2, "0");
 
-  if (timeFormat.checked == true) {
-    if (hr > 12) {
-      formatZero();
-      clockSuffix.innerHTML = "PM";
-      clock.innerHTML = `${hr}:${min}:${sec} `;
-      clock.appendChild(clockSuffix);
-    } else if (hr == 0 || hr < 12) {
-      formatZero();
-      clockSuffix.innerHTML = "AM";
-      clock.innerHTML = `${hr}:${min}:${sec}`;
-      clock.appendChild(clockSuffix);
-    }
-  } else {
-    if (hr > 12) {
-      hr -= 12;
-      formatZero();
-      clockSuffix.innerHTML = "PM";
-      clock.innerHTML = `${hr}:${min}:${sec} `;
-      clock.appendChild(clockSuffix);
-    } else if (hr == 0 || hr < 12) {
-      hr = 12;
-      formatZero();
-      clockSuffix.innerHTML = "AM";
-      clock.innerHTML = `${hr}:${min}:${sec}`;
-      clock.appendChild(clockSuffix);
-    }
+    clock.innerHTML = `${hr}:${min}:${sec}`;
   }
+  // 12-hour format
+  else {
+    let period = hr >= 12 ? "PM" : "AM";
+
+    hr = hr % 12;
+
+    if (hr === 0) {
+      hr = 12;
+    }
+
+    hr = String(hr).padStart(2, "0");
+
+    clock.innerHTML = `${hr}:${min}:${sec} `;
+
+    clockSuffix.innerHTML = period;
+
+    clock.appendChild(clockSuffix);
+  }
+
+  weekDayName.innerHTML = `Day${date.getDay() + 1} - ${weekDay}`;
+
   todayDate.innerHTML = `${day} ${month} ${year}`;
 
-  calender.appendChild(todayDate);
-}, 1000);
+  if (!calendar.contains(todayDate)) {
+    calendar.appendChild(todayDate);
+  }
+}
+
+// Run immediately
+updateClock();
+
+// Update every second
+setInterval(updateClock, 1000);
